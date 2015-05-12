@@ -24,15 +24,13 @@ namespace LettercaseRercentageRatio
                 }
             }
 
-            for (var i = 0; i < lines.Count; i++)
+            foreach (var textFromLine in lines)
             {
-                var textFromLine = lines[i];
-
-                for (var j = 0; j < textFromLine.Length; j++)
+                foreach (var c in textFromLine)
                 {
-                    if (Char.IsLower(textFromLine[j]))
+                    if (Char.IsLower(c))
                         lowerCaseCount++;
-                    else if (Char.IsUpper(textFromLine[j]))
+                    else if (Char.IsUpper(c))
                         upperCaseCount++;
                 }
 
@@ -46,9 +44,8 @@ namespace LettercaseRercentageRatio
                 upperCaseCount = 0;
             }
 
-            for (var i = 0; i < results.Count; i++)
+            foreach (var item in results)
             {
-                var item = results[i];
                 Console.WriteLine(item);
             }
         }
